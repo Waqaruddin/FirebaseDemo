@@ -1,5 +1,6 @@
 package com.example.firebasedemo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
                     override fun onComplete(task: Task<AuthResult>) {
                         if(task.isSuccessful){
                             Toast.makeText(applicationContext, "Login Successfull", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(applicationContext, HomeActivity::class.java))
                         }else{
                             Toast.makeText(applicationContext, "Login failed", Toast.LENGTH_SHORT).show()
 
@@ -39,5 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         }
+
+
     }
 }
